@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Die perfekte Intranet-Startseite — Powell Brand</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Lexend+Exa:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── POWELL BRAND TOKENS ── */
+:root {
+  /* Primary */
+  --petrol:       #083C49;
+  --petrol-mid:   #0a4d5e;
+  --petrol-light: #AECDD3;
+  --white-bg:     #F6F6F6;
+  --white:        #ffff;
+  /* Secondary */
+  --turquoise:    #2EDFCA;
+  --turquoise-lt: #B7F7F0;
+  --green:        #97FFBA;
+  --green-lt:     #CFFFE8;
+  --pink:         #E55393;
+  --pink-lt:      #FBCCE1;
+  --yellow:       #FFE350;
+  /* Neutrals */
+  --gray-100:     #f1f5f7;
+  --gray-200:     #e2eaed;
+  --gray-300:     #c8d6db;
+  --gray-400:     #8fa9b2;
+  --gray-500:     #5c7a84;
+  --gray-600:     #3d5a63;
+  --gray-800:     #1a3038;
+  /* annotation colours */
+  --a1: #f97316;
+  --a2: #8b5cf6;
+  --a3: #10b981;
+  --a4: #3b82f6;
+  --a5: #ef4444;
+  --a6: #0f7490;
+  --a7: #d63384;
+  --a8: #f59e0b;
+}
+
+body {
+  font-family: 'Lexend', sans-serif;
+  background: #AECDD3;
+  padding: 20px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ── PAGE HEADER ── */
+.page-header {
+  max-width: 1340px; margin: 0 auto 16px;
+  background: white;
+  border-radius: 12px;
+  padding: 24px 28px 20px;
+  box-shadow: 0 2px 12px rgba(8,60,73,0.1);
+}
+.page-header-inner {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 40px;
+  margin-bottom: 16px;
+}
+.page-header h1 {
+  font-family: 'Lexend', sans-serif; font-weight: 700;
+  font-size: 24px; color: var(--petrol); margin-bottom: 8px; line-height: 1.2;
+}
+.page-header h1 span { color: var(--turquoise); }
+.page-header-sub {
+  font-size: 13px; color: var(--gray-600); line-height: 1.6; max-width: 520px;
+}
+.page-header-sub strong { color: var(--petrol); font-weight: 600; }
+.page-header-disclaimer {
+  font-size: 11px; color: var(--gray-400); line-height: 1.55;
+  flex-shrink: 0; max-width: 220px; text-align: right;
+  border-left: 1px solid var(--gray-200); padding-left: 22px;
+}
+.page-header-disclaimer strong { color: var(--gray-500); font-weight: 600; }
+
+/* ── DOWNLOAD SECTION ── */
+.download-section {
+  display: flex; align-items: center; gap: 20px;
+  padding-top: 16px;
+  border-top: 1.5px solid var(--turquoise);
+}
+.dl-intro { flex-shrink: 0; }
+.dl-intro-label {
+  font-family: 'Lexend Exa', sans-serif; font-size: 9px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .12em;
+  color: var(--petrol); margin-bottom: 4px; opacity: .7;
+}
+.dl-intro-title { font-size: 13px; font-weight: 700; color: var(--petrol); line-height: 1.3; max-width: 110px; }
+.dl-divider { width: 1px; height: 44px; background: var(--gray-300); flex-shrink: 0; }
+.dl-cards { display: flex; gap: 10px; flex: 1; }
+.dl-card {
+  flex: 1; background: #f0f7f8;
+  border: 1.5px solid #AECDD3; border-radius: 10px;
+  padding: 12px 14px; display: flex; align-items: center; gap: 10px;
+  cursor: pointer;
+  transition: border-color .18s, transform .18s, box-shadow .18s;
+}
+.dl-card:hover { border-color: var(--petrol); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(8,60,73,0.12); }
+.dl-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.dl-i-gen    { background: var(--turquoise-lt); }
+.dl-i-bank   { background: #dbeafe; }
+.dl-i-health { background: var(--green-lt); }
+.dl-title { font-size: 12.5px; font-weight: 700; color: var(--petrol); margin-bottom: 2px; }
+.dl-sub { font-size: 10.5px; color: var(--petrol); opacity: .6; }
+.dl-arrow { margin-left: auto; color: var(--petrol); font-size: 14px; flex-shrink: 0; transition: transform .18s; opacity: .5; }
+.dl-card:hover .dl-arrow { transform: translateX(3px); opacity: 1; }
+
+/* ── BROWSER CHROME ── */
+.browser {
+  max-width: 1340px; margin: 0 auto;
+  background: #ffff;
+  border-radius: 16px;
+  box-shadow:
+    0 0 0 1px rgba(8,60,73,0.08),
+    0 8px 24px rgba(8,60,73,0.16),
+    0 32px 80px rgba(8,60,73,0.24),
+    0 64px 120px rgba(8,60,73,0.12);
+  position: relative; z-index: 1;
+  overflow: clip;
+}
+.browser-bar {
+  background: rgba(240,245,247,0.9); padding: 9px 14px;
+  display: flex; align-items: center; gap: 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  border-radius: 16px 16px 0 0;
+}
+.dots { display: flex; gap: 5px; }
+.dots span { width: 11px; height: 11px; border-radius: 50%; }
+.dots span:nth-child(1){background:#ff5f57;}
+.dots span:nth-child(2){background:#febc2e;}
+.dots span:nth-child(3){background:#28c840;}
+.url-bar {
+  flex: 1; background: rgba(255,255,255,0.8);
+  border-radius: 6px; padding: 4px 10px;
+  font-size: 11px; color: var(--gray-400);
+  border: 1px solid rgba(0,0,0,0.08);
+  font-family: 'Lexend', sans-serif;
+}
+
+/* ── NAV ── */
+.nav {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  display: flex; align-items: center;
+  padding: 0 22px; height: 52px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  position: relative;
+}
+.nav-logo {
+  margin-right: 28px; flex-shrink: 0; display: flex; align-items: center;
+}
+.nav-links { display: flex; flex: 1; height: 100%; }
+.nav-link {
+  display: flex; align-items: center; gap: 4px;
+  padding: 0 13px; height: 100%;
+  font-size: 13px; font-weight: 500; color: var(--gray-600);
+  cursor: pointer; white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color .15s;
+}
+.nav-link:hover { color: var(--petrol); }
+.nav-link.active { color: var(--petrol); border-bottom-color: var(--turquoise); }
+.caret { font-size: 9px; opacity: .45; }
+.nav-right { display: flex; align-items: center; gap: 10px; }
+.nav-search-btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border-radius: 8px;
+  background: var(--gray-100); cursor: pointer; color: var(--gray-500); font-size: 15px;
+}
+.nav-lang {
+  font-size: 12px; color: var(--gray-600); font-family: 'Lexend', sans-serif;
+  display: flex; align-items: center; gap: 3px;
+}
+.nav-apps { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; padding: 2px; }
+.nav-apps span { width: 9px; height: 9px; border-radius: 2px; display: block; }
+.nav-apps span:nth-child(1){background:var(--pink);}
+.nav-apps span:nth-child(2){background:var(--yellow);}
+.nav-apps span:nth-child(3){background:var(--turquoise);}
+.nav-apps span:nth-child(4){background:var(--green);}
+.nav-icon { width: 30px; height: 30px; border-radius: 8px; background: var(--gray-100); display: flex; align-items: center; justify-content: center; font-size: 15px; cursor: pointer; }
+.nav-avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--petrol); display: flex; align-items: center;
+  justify-content: center; color: var(--turquoise);
+  font-size: 11px; font-weight: 700;
+}
+
+/* ── ALERT BAR ── */
+.alert-bar {
+  background: var(--pink); color: var(--white);
+  padding: 9px 22px; display: flex; align-items: center; gap: 10px;
+  font-size: 12.5px; font-weight: 400;
+}
+.alert-bar strong { font-weight: 600; }
+.alert-see { margin-left: auto; font-family: 'Lexend Exa', sans-serif; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; cursor: pointer; opacity: .85; white-space: nowrap; }
+
+/* ── HERO ── */
+.hero {
+  background: var(--petrol);
+  padding: 26px 28px 26px 28px;
+  display: flex; align-items: center; gap: 20px;
+  position: relative; overflow: hidden; min-height: 116px;
+}
+
+.hero-av {
+  width: 62px; height: 62px; border-radius: 50%;
+  border: 3px solid rgba(46,223,202,.4);
+  background: var(--petrol-mid);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; font-weight: 700; color: var(--turquoise);
+  flex-shrink: 0; position: relative; z-index: 1;
+}
+.hero-text { position: relative; z-index: 1; flex: 1; }
+.hero-name {
+  font-family: 'Lexend', sans-serif; font-weight: 300;
+  font-size: 28px; color: var(--white); line-height: 1.1; margin-bottom: 5px;
+}
+.hero-name strong { font-weight: 700; color: var(--turquoise); }
+.hero-quote { font-size: 11.5px; color: rgba(255,255,255,.45); margin-bottom: 9px; font-style: italic; }
+.hero-chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.hero-chip {
+  background: rgba(46,223,202,.12); border: 1px solid rgba(46,223,202,.22);
+  color: rgba(255,255,255,.8); font-size: 11px; padding: 3px 10px;
+  border-radius: 20px; font-weight: 400;
+}
+.persona-tag {
+  position: absolute; bottom: 12px; right: 22px; z-index: 1;
+  background: rgba(46,223,202,.1); border: 1px solid rgba(46,223,202,.18);
+  border-radius: 20px; padding: 3px 10px;
+  font-size: 10px; color: rgba(255,255,255,.6);
+  display: flex; align-items: center; gap: 5px;
+  font-family: 'Lexend Exa', sans-serif; letter-spacing: .03em;
+}
+.persona-green { width: 6px; height: 6px; border-radius: 50%; background: var(--turquoise); flex-shrink: 0; }
+.hero-m365 { display: flex; gap: 18px; align-items: center; position: relative; z-index: 1; flex-shrink: 0; }
+.m365-stat { text-align: center; color: var(--white); cursor: pointer; }
+.m365-icon { font-size: 18px; margin-bottom: 2px; }
+.m365-num { font-size: 20px; font-weight: 700; color: var(--yellow); line-height: 1; }
+.m365-lbl { font-size: 9px; opacity: .5; text-transform: uppercase; letter-spacing: .06em; font-family: 'Lexend Exa', sans-serif; }
+
+/* ── SEARCH STRIP ── */
+.search-strip {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  padding: 14px 22px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  display: flex; gap: 10px; align-items: center;
+}
+.search-box {
+  flex: 1; display: flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,0.9);
+  border: 2px solid var(--turquoise);
+  border-radius: 50px; padding: 9px 16px;
+  box-shadow: 0 0 0 4px rgba(46,223,202,0.08);
+}
+.search-icon { color: var(--turquoise); font-size: 16px; }
+.search-box input {
+  border: none; background: none; outline: none;
+  font-family: 'Lexend', sans-serif; font-size: 14px;
+  color: var(--gray-800); flex: 1;
+}
+.search-box input::placeholder { color: var(--gray-400); }
+.ai-badge {
+  background: var(--petrol); color: var(--turquoise);
+  font-family: 'Lexend Exa', sans-serif;
+  font-size: 9px; font-weight: 600; padding: 3px 9px;
+  border-radius: 20px; text-transform: uppercase; letter-spacing: .07em;
+  white-space: nowrap;
+}
+.scope-pills { display: flex; gap: 6px; }
+.scope-pill {
+  background: var(--white); border: 1.5px solid var(--gray-200);
+  border-radius: 50px; padding: 7px 14px;
+  font-size: 11px; font-weight: 500; color: var(--gray-600);
+  cursor: pointer; white-space: nowrap; display: flex; align-items: center; gap: 5px; transition: all .15s;
+}
+.scope-pill:hover { border-color: var(--turquoise); color: var(--petrol); }
+.scope-pill.active { background: var(--petrol); color: var(--turquoise); border-color: var(--petrol); font-weight: 600; }
+
+/* ── QUICK LINKS STRIP ── */
+.ql-strip {
+  background: var(--petrol);
+  padding: 0 22px;
+  display: flex; align-items: stretch;
+}
+.ql-item {
+  flex: 1; display: flex; flex-direction: column; align-items: center;
+  justify-content: center;
+  gap: 6px; padding: 14px 10px; cursor: pointer;
+  transition: background .15s;
+  border-right: 1px solid rgba(46,223,202,.1);
+  min-width: 0;
+}
+.ql-item:last-child { border-right: none; }
+.ql-item:hover { background: rgba(46,223,202,.08); }
+.ql-icon { font-size: 22px; line-height: 1; flex-shrink: 0; }
+.ql-lbl { font-size: 10.5px; color: rgba(255,255,255,.72); font-weight: 400; text-align: center; line-height: 1.2; white-space: nowrap; }
+
+/* ── BODY ── */
+.body-wrap { background: rgba(248,250,252,0.6); padding: 18px; }
+.main-grid { display: grid; grid-template-columns: 1fr 296px; gap: 14px; align-items: start; }
+.col-left { display: flex; flex-direction: column; gap: 14px; }
+.col-right { display: flex; flex-direction: column; gap: 12px; }
+.full-row { margin-top: 14px; }
+
+/* ── SECTION HEADERS ── */
+.sect-wrap { margin-bottom: 12px; }
+.sect-overline {
+  font-family: 'Lexend Exa', sans-serif; font-size: 9.5px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .1em;
+  color: var(--turquoise); margin-bottom: 1px;
+  display: flex; align-items: center; gap: 6px;
+}
+.sect-overline::before { content: ''; display: block; width: 14px; height: 3px; border-radius: 2px; background: var(--turquoise); flex-shrink: 0; }
+.sect-overline.pink { color: var(--pink); }
+.sect-overline.pink::before { background: var(--pink); }
+.sect-overline.yellow { color: #a07800; }
+.sect-overline.yellow::before { background: var(--yellow); }
+.sect-overline.green { color: #2e7d4f; }
+.sect-overline.green::before { background: var(--green); }
+.sect-title-row { display: flex; align-items: center; justify-content: space-between; }
+.sect-title { font-size: 14px; font-weight: 700; color: var(--petrol); }
+.sect-see-all { font-size: 11px; color: var(--turquoise); font-weight: 600; cursor: pointer; }
+
+/* ── CARDS — frosted glass ── */
+.card {
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.9);
+  box-shadow: 0 4px 20px rgba(8,60,73,0.07), 0 1px 0 rgba(255,255,255,0.8);
+}
+.card-pad { padding: 16px; }
+
+/* ── NEWS ── */
+.news-tabs { display: flex; border-bottom: 1px solid var(--gray-200); padding: 0 16px; }
+.n-tab {
+  padding: 11px 12px; font-size: 12.5px; font-weight: 500;
+  color: var(--gray-400); cursor: pointer;
+  border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color .15s;
+}
+.n-tab.active { color: var(--petrol); border-bottom-color: var(--turquoise); font-weight: 600; }
+.news-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 10px; padding: 14px; }
+
+.nc { border-radius: 10px; overflow: hidden; cursor: pointer; background: var(--gray-100); position: relative; }
+.nc.span2 { grid-row: span 2; }
+.nc-featured { height: 100%; min-height: 180px; position: relative; overflow: hidden; }
+.nc-featured img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.nc-sm { overflow: hidden; display: flex; flex-direction: column; }
+.nc-sm img { width: 100%; height: 90px; object-fit: cover; display: block; flex-shrink: 0; }
+.nc-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(4,28,35,.82)); padding: 18px 12px 12px; color: var(--white); }
+.nc-tag {
+  display: inline-block; font-family: 'Lexend Exa', sans-serif;
+  font-size: 9px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: .08em; padding: 2px 8px; border-radius: 20px; margin-bottom: 5px;
+}
+.tag-strategy { background: rgba(46,223,202,.25); color: var(--turquoise); }
+.tag-hr { background: var(--pink-lt); color: var(--pink); }
+.tag-ops { background: var(--green-lt); color: #166534; }
+.tag-culture { background: var(--turquoise-lt); color: var(--petrol); }
+.nc-title { font-size: 13.5px; font-weight: 600; color: var(--white); line-height: 1.3; margin-bottom: 3px; }
+.nc-date { font-size: 10px; color: rgba(255,255,255,.5); }
+.nc-body { padding: 9px 11px; }
+.nc-title-dk { font-size: 12px; font-weight: 600; color: var(--petrol); line-height: 1.3; margin-bottom: 3px; }
+.nc-date-dk { font-size: 10px; color: var(--gray-400); }
+.play-btn { position: absolute; top: 10px; right: 10px; width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,.9); display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--petrol); }
+
+/* ── HIGHLIGHTED FOR ME ── */
+.highlighted-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+.hcard { border-radius: 10px; overflow: hidden; cursor: pointer; background: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.9); box-shadow: 0 2px 10px rgba(8,60,73,0.06); transition: box-shadow .15s, border-color .15s; backdrop-filter: blur(12px); }
+.hcard:hover { box-shadow: 0 6px 20px rgba(8,60,73,0.12); border-color: rgba(46,223,202,0.4); }
+.hcard-img { height: 78px; display: block; width: 100%; }
+.hcard-body { padding: 9px; }
+.hcard-meta { font-size: 9px; color: var(--gray-400); font-weight: 400; margin-bottom: 3px; font-family: 'Lexend Exa', sans-serif; letter-spacing: .04em; text-transform: uppercase; }
+.hcard-title { font-size: 11.5px; font-weight: 600; color: var(--petrol); line-height: 1.3; margin-bottom: 3px; }
+.hcard-excerpt { font-size: 10.5px; color: var(--gray-500); line-height: 1.4; }
+.hcard-footer { display: flex; align-items: center; gap: 8px; padding: 6px 9px; border-top: 1px solid var(--gray-100); }
+.hcard-stat { font-size: 10px; color: var(--gray-400); }
+
+.filter-row { display: flex; gap: 6px; flex-wrap: wrap; }
+.fpill { background: var(--white); border: 1.5px solid var(--gray-200); border-radius: 50px; padding: 4px 10px; font-size: 11px; font-weight: 500; color: var(--gray-500); cursor: pointer; display: flex; align-items: center; gap: 4px; }
+.fpill.active { background: var(--petrol); color: var(--turquoise); border-color: var(--petrol); font-weight: 600; }
+
+.pagination { display: flex; justify-content: center; gap: 6px; align-items: center; margin-top: 12px; }
+.page-dot { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; cursor: pointer; }
+.page-dot.active { background: var(--petrol); color: var(--turquoise); font-weight: 700; }
+.page-dot.inactive { border: 1.5px solid var(--gray-200); color: var(--gray-500); }
+.page-arrow { font-size: 11px; color: var(--gray-400); cursor: pointer; }
+
+/* ── TODAY'S QUESTION ── */
+.tq-q { font-size: 12.5px; font-weight: 600; color: var(--petrol); margin-bottom: 10px; line-height: 1.4; }
+.tq-opt { display: flex; align-items: center; gap: 8px; padding: 5px 0; font-size: 11.5px; color: var(--gray-600); cursor: pointer; }
+.tq-radio { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--gray-300); flex-shrink: 0; }
+.tq-radio.selected { border-color: var(--turquoise); background: var(--turquoise); }
+.tq-btn { width: 100%; margin-top: 11px; background: var(--petrol); color: var(--turquoise); border: none; border-radius: 50px; padding: 8px; font-size: 12px; font-weight: 700; cursor: pointer; font-family: 'Lexend', sans-serif; letter-spacing: .02em; }
+
+/* ── SIDEBAR ── */
+.tour-card {
+  background: linear-gradient(135deg, var(--turquoise-lt), var(--green-lt));
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-radius: 12px; padding: 14px; display: flex; align-items: center; gap: 10px;
+  cursor: pointer; border: 1.5px solid rgba(46,223,202,.3);
+  box-shadow: 0 4px 16px rgba(46,223,202,0.15);
+}
+.tour-icon { font-size: 22px; }
+.tour-title { font-size: 12.5px; font-weight: 700; color: var(--petrol); }
+.tour-sub { font-size: 10.5px; color: var(--gray-500); }
+.tour-btn { margin-left: auto; background: var(--petrol); color: var(--turquoise); font-size: 10px; font-weight: 700; padding: 6px 12px; border-radius: 50px; white-space: nowrap; flex-shrink: 0; font-family: 'Lexend', sans-serif; }
+
+.app-item { display: flex; align-items: center; gap: 10px; padding: 8px; border-radius: 8px; cursor: pointer; }
+.app-item:hover { background: var(--gray-100); }
+.app-icon { width: 36px; height: 36px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.i-teams { background: rgba(46,223,202,.12); }
+.i-outlook { background: rgba(229,83,147,.1); }
+.i-cal { background: rgba(255,227,80,.15); }
+.app-label { font-size: 12px; font-weight: 600; color: var(--petrol); }
+.app-sub { font-size: 10.5px; color: var(--gray-400); }
+.app-badge { margin-left: auto; background: var(--pink); color: var(--white); font-size: 10px; font-weight: 700; min-width: 20px; height: 20px; border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 0 5px; }
+.app-badge.tq { background: var(--turquoise); color: var(--petrol); }
+.app-badge.yw { background: var(--yellow); color: var(--petrol); }
+
+.hr-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.hr-tile { background: var(--white-bg); border-radius: 9px; padding: 10px; cursor: pointer; border: 1.5px solid transparent; transition: all .15s; }
+.hr-tile:hover { border-color: var(--turquoise); background: var(--white); }
+.hr-tile-icon { font-size: 20px; margin-bottom: 4px; }
+.hr-tile-label { font-size: 11.5px; font-weight: 600; color: var(--petrol); }
+.hr-tile-sub { font-size: 10px; color: var(--gray-400); margin-top: 1px; }
+.hr-tile-badge { display: inline-block; background: var(--pink); color: var(--white); font-size: 9px; font-weight: 700; padding: 1px 7px; border-radius: 20px; margin-top: 4px; }
+.hr-tile-badge.tq { background: var(--turquoise); color: var(--petrol); }
+
+.event-item { display: flex; gap: 10px; padding: 9px; border-radius: 9px; cursor: pointer; border: 1.5px solid var(--gray-200); margin-bottom: 8px; background: rgba(255,255,255,0.7); transition: border-color .15s, box-shadow .15s; }
+.event-item:hover { border-color: var(--turquoise); box-shadow: 0 2px 10px rgba(46,223,202,0.1); }
+.event-date { width: 36px; text-align: center; flex-shrink: 0; }
+.event-day { font-size: 18px; font-weight: 700; color: var(--petrol); line-height: 1; }
+.event-month { font-size: 9px; text-transform: uppercase; color: var(--gray-400); font-weight: 600; letter-spacing: .05em; font-family: 'Lexend Exa', sans-serif; }
+.event-title { font-size: 11.5px; font-weight: 600; color: var(--petrol); line-height: 1.3; margin-bottom: 2px; }
+.event-meta { font-size: 10px; color: var(--gray-400); }
+.event-add { margin-left: auto; font-size: 10px; color: var(--turquoise); font-weight: 700; white-space: nowrap; flex-shrink: 0; cursor: pointer; }
+
+.ceo-card {
+  background: var(--petrol); border-radius: 12px; padding: 16px;
+  position: relative; overflow: hidden;
+  box-shadow: 0 8px 24px rgba(8,60,73,0.25);
+}
+.ceo-card::before { content: '"'; position: absolute; top: -14px; right: 12px; font-family: 'Lexend', sans-serif; font-size: 80px; color: rgba(46,223,202,.1); line-height: 1; pointer-events: none; }
+.ceo-inner { display: flex; gap: 10px; align-items: flex-start; position: relative; z-index: 1; }
+.ceo-av { width: 40px; height: 40px; border-radius: 50%; background: rgba(46,223,202,.15); border: 2px solid rgba(46,223,202,.3); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+.ceo-overline { font-family: 'Lexend Exa', sans-serif; font-size: 9px; color: var(--turquoise); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 5px; opacity: .7; }
+.ceo-quote { font-size: 11.5px; line-height: 1.55; color: rgba(255,255,255,.85); font-style: italic; margin-bottom: 6px; }
+.ceo-name { font-size: 10.5px; font-weight: 600; color: rgba(255,255,255,.55); }
+.ceo-btn { display: inline-block; margin-top: 11px; background: rgba(46,223,202,.15); color: var(--turquoise); font-size: 10.5px; font-weight: 600; padding: 6px 13px; border-radius: 50px; cursor: pointer; border: 1px solid rgba(46,223,202,.25); }
+
+.new-item { display: flex; align-items: center; gap: 9px; padding: 7px; border-radius: 8px; cursor: pointer; }
+.new-item:hover { background: var(--gray-100); }
+.new-av { width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: var(--white); }
+.av1{background:var(--petrol);}
+.av2{background:#065f46;}
+.av3{background:#7c2d12;}
+.new-name { font-size: 11.5px; font-weight: 600; color: var(--petrol); }
+.new-role { font-size: 10px; color: var(--gray-400); }
+.new-badge { margin-left: auto; background: var(--green-lt); color: #166534; font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 20px; white-space: nowrap; border: 1px solid rgba(151,255,186,.5); }
+
+/* ── ANNOTATION SYSTEM ── */
+.ann-wrap { position: relative; }
+
+@keyframes badge-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-4px); }
+}
+.start-here-badge {
+  position: fixed;
+  background: var(--petrol);
+  color: var(--turquoise);
+  font-family: 'Lexend', sans-serif;
+  font-size: 10px; font-weight: 700;
+  padding: 5px 10px 5px 8px;
+  border-radius: 20px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 9002;
+  box-shadow: 0 3px 10px rgba(8,60,73,0.3);
+  display: flex; align-items: center; gap: 5px;
+  animation: badge-bounce 1.8s ease-in-out infinite;
+}
+.start-here-badge::before {
+  content: '👆';
+  font-size: 12px;
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(1);   opacity: .6; }
+  70%  { transform: scale(1.9); opacity: 0; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+.ann-pulse-ring {
+  position: fixed; border-radius: 50%; pointer-events: none; z-index: 9000;
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card { transition: box-shadow .2s ease, transform .2s ease; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(8,60,73,0.11); }
+.hcard { transition: box-shadow .2s ease, transform .2s ease, border-color .2s ease; }
+.hcard:hover { transform: translateY(-2px); }
+.nc { transition: transform .2s ease; }
+.nc:hover { transform: translateY(-2px); }
+
+.download-section {
+  display: flex; align-items: center; gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.dl-intro { flex-shrink: 0; }
+.dl-intro-label {
+  font-family: 'Lexend Exa', sans-serif; font-size: 9px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .12em;
+  color: var(--turquoise); margin-bottom: 3px; opacity: .8;
+}
+.dl-intro-title { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.65); line-height: 1.3; max-width: 110px; }
+.dl-divider { width: 1px; height: 44px; background: rgba(255,255,255,0.12); flex-shrink: 0; }
+.dl-cards { display: flex; gap: 10px; flex: 1; }
+.dl-card {
+  flex: 1; background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12); border-radius: 10px;
+  padding: 11px 14px; display: flex; align-items: center; gap: 10px;
+  cursor: pointer;
+  transition: background .18s, border-color .18s, transform .18s;
+}
+.dl-card:hover { background: rgba(46,223,202,0.12); border-color: rgba(46,223,202,0.4); transform: translateY(-2px); }
+.dl-icon { width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+.dl-i-gen    { background: rgba(46,223,202,0.15); }
+.dl-i-bank   { background: rgba(59,130,246,0.2); }
+.dl-i-health { background: rgba(151,255,186,0.15); }
+.dl-title { font-size: 12px; font-weight: 700; color: var(--white); margin-bottom: 1px; }
+.dl-sub { font-size: 10px; color: rgba(255,255,255,0.38); }
+.dl-arrow { margin-left: auto; color: var(--turquoise); font-size: 14px; flex-shrink: 0; transition: transform .18s; opacity: .7; }
+.dl-card:hover .dl-arrow { transform: translateX(3px); opacity: 1; }</style>
+</head>
+<body>
+
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div>
+      <h1>So sieht eine <span>erstklassige</span> Intranet-Startseite aus</h1>
+      <div class="page-header-sub">Jede Designentscheidung hier löst ein konkretes Problem — Auffindbarkeit, Akzeptanz, Personalisierung, M365-Integration. <strong>Bewegen Sie den Mauszeiger über die nummerierten Symbole</strong>, um zu erfahren, warum jedes Element seinen Platz verdient.</div>
+    </div>
+    <div class="page-header-disclaimer">
+      <strong>Konzeptionelles Annotations-Mockup</strong> — kein produktives Powell-Projekt. Entwickelt, um das <em>Warum</em> hinter Homepage-Entscheidungen zu erklären, nicht um eine Live-Umgebung nachzubilden.
+    </div>
+  </div>
+  <div class="download-section">
+    <div class="dl-intro">
+      <div class="dl-intro-label" style="color:#083C49;opacity:.6;">In der Praxis ansehen</div>
+      <div class="dl-intro-title" style="color:#083C49;font-weight:700;">Echte Powell-Beispiele</div>
+    </div>
+    <div class="dl-divider"></div>
+    <div class="dl-cards">
+      <div class="dl-card" onclick="openLightbox('https://landing.powell-software.com/hubfs/08.%20PICTURE%20BANK%20(picture%20from%20bank%20image)/Product%20Mockup/Powell%20Intranet%20example.png', 'Allgemeines Intranet · Gaïa-Vorlage')">
+        <div class="dl-icon dl-i-gen">🏢</div>
+        <div><div class="dl-title" style="color:#083C49;font-weight:700;">Allgemeines Intranet</div><div class="dl-sub" style="color:#083C49;opacity:.65;">Gaïa-Vorlage · Alle Branchen</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;margin-left:auto;flex-shrink:0;">
+          <span style="color:#083C49;font-size:14px;" title="Vorschau">↗</span>
+          <a href="https://landing.powell-software.com/hubfs/08.%20PICTURE%20BANK%20(picture%20from%20bank%20image)/Product%20Mockup/Powell%20Intranet%20example.png" download onclick="event.stopPropagation()" style="color:#083C49;font-size:13px;text-decoration:none;" title="Herunterladen">⬇</a>
+        </div>
+      </div>
+      <div class="dl-card" onclick="openLightbox('https://landing.powell-software.com/hubfs/08.%20PICTURE%20BANK%20(picture%20from%20bank%20image)/Product%20Mockup/Powell%20Intranet%20finance%20example.png', 'Banken-Intranet · NEO-Vorlage')">
+        <div class="dl-icon dl-i-bank">🏦</div>
+        <div><div class="dl-title" style="color:#083C49;font-weight:700;">Banken-Intranet</div><div class="dl-sub" style="color:#083C49;opacity:.65;">NEO-Vorlage · Finanzdienstleistungen</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;margin-left:auto;flex-shrink:0;">
+          <span style="color:#083C49;font-size:14px;" title="Vorschau">↗</span>
+          <a href="https://landing.powell-software.com/hubfs/08.%20PICTURE%20BANK%20(picture%20from%20bank%20image)/Product%20Mockup/Powell%20Intranet%20finance%20example.png" download onclick="event.stopPropagation()" style="color:#083C49;font-size:13px;text-decoration:none;" title="Herunterladen">⬇</a>
+        </div>
+      </div>
+      <div class="dl-card" onclick="openLightbox('https://landing.powell-software.com/hubfs/08.%20PICTURE%20BANK%20(picture%20from%20bank%20image)/Product%20Mockup/Powell%20Intranet%20health%20example.png', 'Gesundheitswesen-Intranet · Health-Vorlage')">
+        <div class="dl-icon dl-i-health">🏥</div>
+        <div><div class="dl-title" style="color:#083C49;font-weight:700;">Gesundheitswesen-Intranet</div><div class="dl-sub" style="color:#083C49;opacity:.65;">Health-Vorlage · Krankenhäuser</div></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;margin-left:auto;flex-shrink:0;">
+          <span style="color:#083C49;font-size:14px;" title="Vorschau">↗</span>
+          <a href="https://landing.powell-software.com/hubfs/08.%20PICTURE%20BANK%20(picture%20from%20bank%20image)/Product%20Mockup/Powell%20Intranet%20health%20example.png" download onclick="event.stopPropagation()" style="color:#083C49;font-size:13px;text-decoration:none;" title="Herunterladen">⬇</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox overlay -->
+<div id="lightbox" onclick="closeLightbox()" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(4,15,20,0.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);align-items:center;justify-content:center;cursor:zoom-out;">
+  <div style="position:relative;max-width:90vw;max-height:88vh;" onclick="event.stopPropagation()">
+    <img id="lightbox-img" src="" style="max-width:90vw;max-height:80vh;border-radius:12px;box-shadow:0 32px 80px rgba(0,0,0,0.6);display:block;" alt="">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-top:14px;padding:0 4px;">
+      <div id="lightbox-label" style="font-family:'Lexend',sans-serif;font-size:13px;color:rgba(255,255,255,0.6);"></div>
+      <a id="lightbox-download" href="" download style="display:flex;align-items:center;gap:7px;background:var(--turquoise);color:var(--petrol);font-family:'Lexend',sans-serif;font-size:12px;font-weight:700;padding:8px 16px;border-radius:50px;text-decoration:none;cursor:pointer;box-shadow:0 2px 10px rgba(46,223,202,0.3);">
+        ⬇ Bild herunterladen
+      </a>
+    </div>
+    <button onclick="closeLightbox()" style="position:absolute;top:-14px;right:-14px;width:32px;height:32px;border-radius:50%;background:#083C49;border:2px solid rgba(46,223,202,0.4);color:#2EDFCA;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:'Lexend',sans-serif;">✕</button>
+  </div>
+</div>
+
+<!-- ════ BROWSER ════ -->
+<div class="browser">
+  <!-- NAV -->
+  <div class="nav ann-wrap">
+    <div class="nav-logo">
+      <img src="https://26290363.fs1.hubspotusercontent-eu1.net/hubfs/26290363/01.%20LOGOS/01.%20Powell%20Software%20logos/New/Logo%20Powell.png" style="height:28px;width:auto;display:block;" alt="Powell">
+    </div>
+    <div class="nav-links">
+      <div class="nav-link" style="position:relative;">
+        Mein Bereich <span class="caret">▾</span><span data-ann="G" data-color="a5" data-title="Governance-gesteuerte Navigation" data-body='"Mein Bereich" = persönliche Tools. "Das Unternehmen" = Konzernweites. "Mein Standort" = standortrelevante Inhalte. Diese dreistufige Struktur sorgt dafür, dass jeder Mitarbeitende sofort weiß, wo er suchen muss — kein lästiges "Wo finde ich X?" mehr, das die Akzeptanz torpediert.' data-owner="Verantwortlich: Intranet-Governance-Komitee"></span>
+      </div>
+      <div class="nav-link">Das Unternehmen <span class="caret">▾</span></div>
+      <div class="nav-link active">Mein Standort <span class="caret">▾</span></div>
+      <div class="nav-link">Communities <span class="caret">▾</span></div>
+      <div class="nav-link">Verzeichnis</div>
+    </div>
+    <div class="nav-right">
+      <div class="nav-search-btn" style="position:relative;">
+        🔍<span data-ann="1" data-color="a1" data-title="Suche — immer einen Klick entfernt" data-body="Die Suche ist auf jeder Seite in der Navigation verankert, nicht nur auf der Startseite. Mitarbeitende besuchen das Intranet hauptsächlich, um Informationen zu finden — wer sie erst zu einer separaten Suchseite navigieren lässt, schafft eine Hürde, die die Nutzungsgewohnheit zerstört." data-owner="Verantwortlich: IT / Such-Team"></span>
+      </div>
+      <div class="nav-lang">Deutsch <span class="caret">▾</span></div>
+      <div class="nav-apps"><span></span><span></span><span></span><span></span></div>
+      <div class="nav-icon">⚙️</div>
+      <div class="nav-icon">➕</div>
+      <div class="nav-avatar">SJ</div>
+    </div>
+  </div>
+
+  <!-- ALERT BAR -->
+  <div class="alert-bar">
+    <span>ℹ️</span>
+    <span><strong>Geplante Wartung heute Nacht von 22:00 bis 00:00 Uhr.</strong> Das HR-Portal ist in dieser Zeit nicht erreichbar. Bei dringenden Anfragen wenden Sie sich bitte an die IT.</span>
+    <span class="alert-see">Mehr erfahren</span>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero ann-wrap r2">
+    <div class="hero-av" style="padding:0;overflow:hidden;">
+    <img src="https://26290363.fs1.hubspotusercontent-eu1.net/hubfs/26290363/08.%20PICTURE%20BANK%20(picture%20from%20bank%20image)/Sarah%20corporate%20woman%20headshot.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="Sarah">
+  </div>
+    <div class="hero-text">
+      <div class="hero-name">Willkommen zurück, <strong>Sarah</strong></div>
+      <div class="hero-quote">« Zähle nicht die Tage. Mach jeden Tag zählen. » — Muhammad Ali</div>
+      <div class="hero-chips">
+        <span class="hero-chip">📍 London, UK</span>
+        <span class="hero-chip">🏢 Produkt & Technologie</span>
+        <span class="hero-chip">👤 Senior Manager</span>
+      </div>
+    </div>
+    <div class="hero-m365" style="position:relative;">
+      <div class="m365-stat">
+        <div class="m365-icon">📧</div>
+        <div class="m365-num">12</div>
+        <div class="m365-lbl">Ungelesen</div>
+      </div>
+      <div class="m365-stat">
+        <div class="m365-icon">💬</div>
+        <div class="m365-num">5</div>
+        <div class="m365-lbl">Teams</div>
+      </div>
+      <div class="m365-stat">
+        <div class="m365-icon">📅</div>
+        <div class="m365-num">3</div>
+        <div class="m365-lbl">Meetings</div>
+      </div>
+      <span data-ann="4" data-color="a4" data-title="Ihre M365-Welt auf einen Blick" data-body="Ungelesene E-Mails, Teams-Nachrichten und das nächste Meeting erscheinen sofort beim Öffnen. Jede Kennzahl verlinkt direkt in die jeweilige App — das Intranet wird zum täglichen Dashboard und gibt den Mitarbeitenden einen echten Grund, es jeden Morgen zu öffnen." data-owner="Verantwortlich: M365-Administrator"></span>
+    </div>
+    <div class="persona-tag"><span class="persona-green"></span>Personalisiert · London · Produkt & Tech</div>
+    <span data-ann="2" data-color="a2" data-title="Eine Startseite, die Sie kennt" data-body="Name, Rolle, Standort und Abteilung sind beim Laden sichtbar — ein klares Signal, dass alles darunter für diese Person relevant ist. Eine Krankenschwester in München sieht andere Inhalte als ein Produktmanager in London. Personalisierung auf diesem Niveau ist der stärkste Treiber für tägliche Wiederkehrsbesuche." data-owner="Verantwortlich: Digital-Workplace-Team" style="position:absolute;bottom:10px;left:10px;"></span>
+  </div>
+
+  <!-- SEARCH STRIP -->
+  <div class="search-strip ann-wrap r1">
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" placeholder="Personen, Dokumente, Richtlinien, Tools, Neuigkeiten suchen…">
+      <span class="ai-badge">✦ KI-Suche</span>
+    </div>
+    <div class="scope-pills">
+      <div class="scope-pill active">Alle</div>
+      <div class="scope-pill">👤 Personen</div>
+      <div class="scope-pill">📄 Dokumente</div>
+      <div class="scope-pill">📰 News</div>
+      <div class="scope-pill">🛠 Tools</div>
+    </div>
+    <span data-ann="3" data-color="a1" data-title="Suche ist die wichtigste Aktion auf der Startseite" data-body="Die breite Suchleiste ist das erste interaktive Element, weil das Finden von Informationen der Hauptgrund für einen Intranet-Besuch ist. KI-gestützte semantische Suche liefert das richtige Ergebnis auch ohne exakte Suchbegriffe. Gefilterte Bereiche ermöglichen sofortige Eingrenzung. Wer das nicht richtig umsetzt, verwandelt das Intranet in einen Newsfeed, den niemand liest." data-owner="Verantwortlich: IT / Such-Team"></span>
+  </div>
+
+  <!-- QUICK LINKS STRIP -->
+  <div class="ql-strip ann-wrap r2">
+    <div class="ql-item"><div class="ql-icon">💬</div><div class="ql-lbl">Teams</div></div>
+    <div class="ql-item"><div class="ql-icon">📧</div><div class="ql-lbl">Outlook</div></div>
+    <div class="ql-item"><div class="ql-icon">🏖</div><div class="ql-lbl">Urlaub</div></div>
+    <div class="ql-item"><div class="ql-icon">👥</div><div class="ql-lbl">Verzeichnis</div></div>
+    <div class="ql-item"><div class="ql-icon">📋</div><div class="ql-lbl">Richtlinien</div></div>
+    <div class="ql-item"><div class="ql-icon">🛠</div><div class="ql-lbl">IT-Support</div></div>
+    <div class="ql-item"><div class="ql-icon">🎓</div><div class="ql-lbl">Weiterbildung</div></div>
+    <div class="ql-item" style="opacity:.5;"><div class="ql-icon">➕</div><div class="ql-lbl">Verwalten</div></div>
+    <span data-ann="5" data-color="a2" data-title="Tägliche Tools mit einem Klick" data-body="Die 7–8 meistgenutzten Apps sind von jeder Seite aus direkt erreichbar. Die Links sind rollenbasiert personalisiert — ein Finanzanalyst sieht andere Standardeinstellungen als eine Pflegekraft — und Mitarbeitende können ihre eigene Reihenfolge festlegen. Teams und HR-Tools hier zu platzieren, macht das Intranet zum natürlichen Einstiegspunkt des Arbeitstages." data-owner="Verantwortlich: Self-Service Mitarbeitende + IT-Standards"></span>
+  </div>
+
+  <!-- BODY -->
+  <div class="body-wrap">
+    <div class="main-grid">
+
+      <!-- LEFT -->
+      <div class="col-left">
+
+        <!-- NEWS -->
+        <div class="card ann-wrap r6">
+          <div class="news-tabs">
+            <div class="n-tab active">Unternehmensnews</div>
+            <div class="n-tab">Meine Abteilung</div>
+            <div class="n-tab">Meine Themen</div>
+          </div>
+          <div class="news-grid">
+            <div class="nc span2">
+              <div class="nc-featured">
+                <video autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
+                  <source src="https://26290363.fs1.hubspotusercontent-eu1.net/hubfs/26290363/08.%20PICTURE%20BANK%20(picture%20from%20bank%20image)/2e33c8a4-e4a2-4aad-9aad-9bd397b547af.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="play-btn">▶</div>
+              <div class="nc-overlay">
+                <span class="nc-tag tag-strategy">Strategie</span>
+                <div class="nc-title">Unsere Vision für 2026 — Neue Herausforderungen, größere Ambitionen</div>
+                <div class="nc-date">22. April 2026 · 👁 1.200 · 👍 8</div>
+              </div>
+            </div>
+            <div class="nc nc-sm">
+              <img src="https://26290363.fs1.hubspotusercontent-eu1.net/hubfs/26290363/08.%20PICTURE%20BANK%20(picture%20from%20bank%20image)/Roadmap.png" style="width:100%;height:90px;object-fit:cover;display:block;flex-shrink:0;" alt="HR-Richtlinie">
+              <div class="nc-body">
+                <span class="nc-tag tag-hr">HR</span>
+                <div class="nc-title-dk">Neue Regelung zum flexiblen Arbeiten — ab 1. Juni gültig</div>
+                <div class="nc-date-dk">20. April 2026</div>
+              </div>
+            </div>
+            <div class="nc nc-sm">
+              <img src="https://26290363.fs1.hubspotusercontent-eu1.net/hubfs/26290363/08.%20PICTURE%20BANK%20(picture%20from%20bank%20image)/Volunteer%20day.png" style="width:100%;height:90px;object-fit:cover;display:block;flex-shrink:0;" alt="Ehrenamtstag">
+              <div class="nc-body">
+                <span class="nc-tag tag-culture">Kultur</span>
+                <div class="nc-title-dk">Ehrenamtstag: 2.400 Stunden für die Gemeinschaft</div>
+                <div class="nc-date-dk">15. April 2026</div>
+              </div>
+            </div>
+          </div>
+          <span data-ann="6" data-color="a6" data-title="News, die Ihren Kontext kennen" data-body="Drei Reiter gliedern die Inhalte: Unternehmensweit, Meine Abteilung, Meine Themen. Das visuelle Kartenlayout signalisiert sofort redaktionelle Qualität. Video-Support und Engagement-Metriken erzeugen soziale Bestätigung, die Inhalte lesenswert macht." data-owner="Verantwortlich: Kommunikation (Konzern) + Abteilungsleiter"></span>
+        </div>
+
+        <!-- HIGHLIGHTED FOR ME -->
+        <div class="card card-pad" style="position:relative;">
+          <span data-ann="7" data-color="a2" data-title="Inhalte, die zu Ihnen kommen" data-body="Inhalte werden algorithmisch nach Rolle, Standort und bisherigem Engagement angezeigt — nicht nur chronologisch. Filter ermöglichen individuelle Anpassung. Aufruf- und Like-Zahlen helfen Redakteuren zu erkennen, was ankommt, und schaffen eine Rückkopplungsschleife, die die Qualität kontinuierlich verbessert." data-owner="Verantwortlich: Digital Workplace + Inhaltsverantwortliche"></span>
+          <div class="sect-wrap">
+            <div class="sect-overline">Für mich hervorgehoben</div>
+            <div class="sect-title-row">
+              <div class="sect-title">Ausgewählte Inhalte für Sie</div>
+              <div class="filter-row">
+                <div class="fpill active">Kommunikation ✕</div>
+                <div class="fpill">HR</div>
+                <div class="fpill">Strategie</div>
+                <span class="sect-see-all">⚙ Filter</span>
+              </div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
+            <div class="hcard">
+              <img class="hcard-img" src="https://26290363.fs1.hubspotusercontent-eu1.net/hubfs/26290363/08.%20PICTURE%20BANK%20(picture%20from%20bank%20image)/Roadmap.png" style="object-fit:cover;width:100%;height:78px;display:block;" alt="Roadmap">
+              <div class="hcard-body"><div class="hcard-meta">Kommunikation · Alle · 25.09.2024</div><div class="hcard-title">Roadmap-Update: Unsere nachhaltige Zukunft</div><div class="hcard-excerpt">Entdecken Sie unsere Roadmap für eine grünere Zukunft und unser ambitioniertes Engagement für Öko-Innovation…</div></div>
+              <div class="hcard-footer"><span class="hcard-stat">👁 1.200</span><span class="hcard-stat">👍 8</span></div>
+            </div>
+            <div class="hcard">
+              <img class="hcard-img" src="https://26290363.fs1.hubspotusercontent-eu1.net/hubfs/26290363/08.%20PICTURE%20BANK%20(picture%20from%20bank%20image)/Voice%20of%20change.png" style="object-fit:cover;width:100%;height:78px;display:block;" alt="Stimmen des Wandels">
+              <div class="hcard-body"><div class="hcard-meta">Kommunikation · Alle · 19.03.2026</div><div class="hcard-title">Stimmen des Wandels: Ideen unserer Mitarbeitenden</div><div class="hcard-excerpt">Mitarbeitende teilen innovative Ideen für eine nachhaltige Zukunft…</div></div>
+              <div class="hcard-footer"><span class="hcard-stat">👁 363</span><span class="hcard-stat">👍 3</span></div>
+            </div>
+            <div class="hcard">
+              <img class="hcard-img" src="https://26290363.fs1.hubspotusercontent-eu1.net/hubfs/26290363/08.%20PICTURE%20BANK%20(picture%20from%20bank%20image)/Founder%20journey.png" style="object-fit:cover;width:100%;height:78px;display:block;" alt="Gründerreise">
+              <div class="hcard-body"><div class="hcard-meta">Kommunikation · Ausgewählt · 08.04.2024</div><div class="hcard-title">Die Gründerreise: Vom fossilen zum grünen Unternehmen</div><div class="hcard-excerpt">Die inspirierende Geschichte unserer Gründer und ihr Weg in die Transformation…</div></div>
+              <div class="hcard-footer"><span class="hcard-stat">👁 375</span><span class="hcard-stat">👍 4</span></div>
+            </div>
+          </div>
+          <div class="pagination">
+            <span class="page-arrow">←</span>
+            <span class="page-dot active">1</span>
+            <span class="page-dot inactive">2</span>
+            <span class="page-arrow">→</span>
+          </div>
+        </div>
+
+        <!-- NEWCOMERS -->
+        <div class="card card-pad">
+          <div class="sect-wrap">
+            <div class="sect-overline green">Neue Kolleginnen & Kollegen</div>
+            <div class="sect-title-row">
+              <div class="sect-title">Sagen Sie Hallo 👋</div>
+              <span class="sect-see-all">Alle ansehen →</span>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+            <div style="background:var(--gray-100);border-radius:12px;padding:20px 16px;text-align:center;">
+              <img src="https://26290363.fs1.hubspotusercontent-eu1.net/hubfs/26290363/08.%20PICTURE%20BANK%20(picture%20from%20bank%20image)/Professional%20man%20in%20suit%20headshot.jpg" style="width:90px;height:90px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 12px;border:3px solid var(--white);box-shadow:0 2px 10px rgba(8,60,73,0.15);" alt="Sam">
+              <div style="font-size:13px;font-weight:700;color:var(--petrol);margin-bottom:3px;">Sam Cornell</div>
+              <div style="font-size:11px;color:var(--gray-500);margin-bottom:10px;">CEO · Vertriebsteam</div>
+              <div class="new-badge" style="display:inline-block;margin:0 auto;">Herzlich willkommen!</div>
+            </div>
+            <div style="background:var(--gray-100);border-radius:12px;padding:20px 16px;text-align:center;">
+              <img src="https://26290363.fs1.hubspotusercontent-eu1.net/hubfs/26290363/08.%20PICTURE%20BANK%20(picture%20from%20bank%20image)/iStock-2174363314.jpg" style="width:90px;height:90px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 12px;border:3px solid var(--white);box-shadow:0 2px 10px rgba(8,60,73,0.15);" alt="Mike">
+              <div style="font-size:13px;font-weight:700;color:var(--petrol);margin-bottom:3px;">Mike Sanders</div>
+              <div style="font-size:11px;color:var(--gray-500);margin-bottom:10px;">IT · Helpdesk</div>
+              <div class="new-badge" style="display:inline-block;margin:0 auto;">Herzlich willkommen!</div>
+            </div>
+            <div style="background:var(--gray-100);border-radius:12px;padding:20px 16px;text-align:center;">
+              <img src="https://26290363.fs1.hubspotusercontent-eu1.net/hubfs/26290363/08.%20PICTURE%20BANK%20(picture%20from%20bank%20image)/Professional%20woman%20smiling%20headshot.jpg" style="width:90px;height:90px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 12px;border:3px solid var(--white);box-shadow:0 2px 10px rgba(8,60,73,0.15);" alt="Linda">
+              <div style="font-size:13px;font-weight:700;color:var(--petrol);margin-bottom:3px;">Linda Smith</div>
+              <div style="font-size:11px;color:var(--gray-500);margin-bottom:10px;">Vertriebsteam</div>
+              <div class="new-badge" style="display:inline-block;margin:0 auto;">Herzlich willkommen!</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /col-left -->
+
+      <!-- RIGHT -->
+      <div class="col-right">
+
+        <!-- GUIDED TOUR -->
+        <div class="tour-card" style="position:relative;">
+          <span data-ann="8" data-color="a3" data-title="Vom Neustart zum sicheren Nutzer in 5 Minuten" data-body="Ohne Onboarding stellen neue Mitarbeitende IT-Tickets oder hören auf, das Intranet zu nutzen. Diese geführte Tour wird neuen Kolleginnen und Kollegen automatisch angezeigt und nach Abschluss ausgeblendet. Eine Powell-Implementierung reduzierte die Intranet-Einarbeitung von 1,5 Tagen auf 2 Stunden — ohne einen einzigen Support-Anruf am Launch-Tag." data-owner="Verantwortlich: Change Management / Digitale Kommunikation"></span>
+          <span class="tour-icon">🗺</span>
+          <div>
+            <div class="tour-title">Neu hier? Starten Sie die Tour</div>
+            <div class="tour-sub">5 Min. · sofort zurechtfinden</div>
+          </div>
+          <div class="tour-btn">Loslegen →</div>
+        </div>
+
+        <!-- MY DAY -->
+        <div class="card card-pad" style="position:relative;">
+          <span data-ann="4" data-color="a4" data-title="Ihr Arbeitstag auf einen Blick" data-body="Meeting-Titel, genaue Ungelesen-Zähler und zeitbasierte Badges geben Mitarbeitenden volle Übersicht, ohne Teams oder Outlook öffnen zu müssen. Diese Karte allein gibt den Leuten einen Grund, das Intranet vor jeder anderen App zu öffnen." data-owner="Verantwortlich: M365-Administrator"></span>
+          <div class="sect-wrap">
+            <div class="sect-overline">Mein Tag</div>
+            <div class="sect-title-row">
+              <div class="sect-title">Microsoft 365</div>
+              <span class="sect-see-all">M365 öffnen →</span>
+            </div>
+          </div>
+          <div class="app-item">
+            <div class="app-icon i-teams">💬</div>
+            <div><div class="app-label">Teams</div><div class="app-sub">5 ungelesene Nachrichten</div></div>
+            <div class="app-badge">5</div>
+          </div>
+          <div class="app-item">
+            <div class="app-icon i-outlook">📧</div>
+            <div><div class="app-label">Outlook</div><div class="app-sub">12 ungelesene E-Mails</div></div>
+            <div class="app-badge">12</div>
+          </div>
+          <div class="app-item">
+            <div class="app-icon i-cal">📅</div>
+            <div><div class="app-label">Product Roadmap Review</div><div class="app-sub">Heute · 14:00 Uhr · 45 Min.</div></div>
+            <div class="app-badge yw">14:00</div>
+          </div>
+        </div>
+
+        <!-- HR SELF-SERVICE -->
+        <div class="card card-pad" style="position:relative;">
+          <span data-ann="9" data-color="a7" data-title="HR-Antworten ohne Ticket erstellen" data-body="Live-Kacheln zeigen Urlaubssaldo, Gehaltsabrechnung, Richtlinienaktualisierungen und Schulungsfristen — jeweils mit Direktlink ins HRIS. Standortbewusst: Deutsche Mitarbeitende sehen deutsche Urlaubsregeln. Jede selbst beantwortete Anfrage ist ein IT- oder HR-Ticket weniger — einer der am besten messbaren ROI-Beiträge eines Intranets." data-owner="Verantwortlich: HR / HRIS-Integrationsteam"></span>
+          <div class="sect-wrap">
+            <div class="sect-overline pink">HR Self-Service</div>
+            <div class="sect-title-row">
+              <div class="sect-title">Ihre Grundfunktionen</div>
+              <span class="sect-see-all">HR-Portal →</span>
+            </div>
+          </div>
+          <div class="hr-grid">
+            <div class="hr-tile"><div class="hr-tile-icon">🏖</div><div class="hr-tile-label">Urlaub</div><div class="hr-tile-sub">12 Tage verbleibend</div></div>
+            <div class="hr-tile"><div class="hr-tile-icon">💰</div><div class="hr-tile-label">Gehaltsabrechnung</div><div class="hr-tile-sub">April verfügbar</div><span class="hr-tile-badge">NEU</span></div>
+            <div class="hr-tile"><div class="hr-tile-icon">📋</div><div class="hr-tile-label">Richtlinien</div><div class="hr-tile-sub">3 aktualisiert</div><span class="hr-tile-badge tq">3</span></div>
+            <div class="hr-tile"><div class="hr-tile-icon">🎓</div><div class="hr-tile-label">Weiterbildung</div><div class="hr-tile-sub">1 bald fällig</div></div>
+          </div>
+        </div>
+
+        <!-- UPCOMING EVENTS -->
+        <div class="card card-pad">
+          <div class="sect-wrap">
+            <div class="sect-overline">Bevorstehende Veranstaltungen</div>
+            <div class="sect-title-row"><div class="sect-title">Was steht an</div><span class="sect-see-all">Alle ansehen →</span></div>
+          </div>
+          <div class="event-item">
+            <div class="event-date"><div class="event-day">18</div><div class="event-month">Sep</div></div>
+            <div><div class="event-title">Unternehmens-Lernmonat — Auftaktveranstaltung</div><div class="event-meta">12:00–13:00 Uhr · Online</div></div>
+            <div class="event-add">+ Kal.</div>
+          </div>
+          <div class="event-item" style="margin-bottom:0;">
+            <div class="event-date"><div class="event-day">24</div><div class="event-month">Jul</div></div>
+            <div><div class="event-title">Green Hand Gala: Gartenschau</div><div class="event-meta">9:00–13:00 Uhr · Paris</div></div>
+            <div class="event-add">+ Kal.</div>
+          </div>
+        </div>
+
+        <!-- CEO -->
+        <div class="ceo-card">
+          <div class="ceo-inner">
+            <div class="ceo-av" style="padding:0;overflow:hidden;">
+              <img src="https://26290363.fs1.hubspotusercontent-eu1.net/hubfs/26290363/08.%20PICTURE%20BANK%20(picture%20from%20bank%20image)/Professional%20man%20in%20suit%20headshot.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="CEO">
+            </div>
+            <div style="position:relative;z-index:1;">
+              <div class="ceo-overline">Vom CEO</div>
+              <div class="ceo-quote">„Dieses Quartal hat bewiesen, was wir schon immer wussten — wenn unsere Mitarbeitenden die richtigen Werkzeuge und Informationen haben, entstehen außergewöhnliche Dinge."</div>
+              <div class="ceo-name">— Alex Morgan, CEO</div>
+              <div class="ceo-btn">Vollständige Nachricht lesen →</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /col-right -->
+    </div><!-- /main-grid -->
+
+    <!-- FULL WIDTH ROW -->
+    <div class="full-row">
+      <div class="card card-pad" style="position:relative;">
+        <span data-ann="10" data-color="a8" data-title="Zweiseitige Kommunikation statt reines Senden" data-body="Eine wöchentlich wechselnde Frage braucht nur 5 Sekunden zur Beantwortung und liefert echte Stimmungsdaten. Die Ergebnisse werden zu CSAT-Werten und Engagement-Metriken, die das Intranet-Budget gegenüber der Führungsebene rechtfertigen. Ein Intranet, das zuhört, wird häufiger genutzt als eines, das nur sendet." data-owner="Verantwortlich: Interne Kommunikation / Digital Workplace"></span>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;align-items:center;">
+          <div>
+            <div class="sect-overline yellow" style="margin-bottom:8px;">Frage des Tages</div>
+            <div class="tq-q">Wie bewerten Sie Ihre Erfahrung mit dem Intranet?</div>
+          </div>
+          <div>
+            <div class="tq-opt"><div class="tq-radio"></div>Sehr gut, ich liebe das Design!</div>
+            <div class="tq-opt"><div class="tq-radio selected"></div>Unkompliziert — ich finde, was ich brauche, in 5 Minuten</div>
+            <div class="tq-opt"><div class="tq-radio"></div>Ich hatte noch keine Zeit, alles zu erkunden</div>
+          </div>
+          <div>
+            <button class="tq-btn">Abstimmen</button>
+            <div style="margin-top:8px;font-size:10.5px;color:var(--gray-400);text-align:center;">312 Antworten diese Woche</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /body-wrap -->
+</div><!-- /browser -->
+
+</body>
+<script>
+// ── ANNOTATION OVERLAY SYSTEM ──
+const COLORS = {
+  a1:'#f97316', a2:'#8b5cf6', a3:'#10b981',
+  a4:'#3b82f6', a5:'#ef4444', a6:'#0f7490',
+  a7:'#d63384', a8:'#f59e0b'
+};
+
+const overlay = document.createElement('div');
+overlay.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:9000;';
+document.body.appendChild(overlay);
+
+const panel = document.createElement('div');
+panel.style.cssText = `
+  position:fixed;width:270px;background:#fff;border-radius:10px;
+  padding:14px 15px;box-shadow:0 10px 32px rgba(8,60,73,.18),0 2px 8px rgba(8,60,73,.1);
+  border-top:3px solid #f97316;opacity:0;pointer-events:none;
+  transform:translateY(6px) scale(.97);
+  transition:opacity .18s ease,transform .18s ease;z-index:9999;
+  font-family:'Lexend',sans-serif;
+`;
+document.body.appendChild(panel);
+
+let activeAnchor = null;
+
+function showPanel(anchor, color) {
+  const title = anchor.dataset.title;
+  const body  = anchor.dataset.body;
+  const owner = anchor.dataset.owner;
+  panel.style.borderTopColor = COLORS[color] || '#083C49';
+  panel.innerHTML = `
+    <div style="font-size:12px;font-weight:700;color:#083C49;margin-bottom:5px;line-height:1.3;">${title}</div>
+    <div style="font-size:11px;color:#3d5a63;line-height:1.55;">${body}</div>
+    <div style="display:inline-block;background:#B7F7F0;color:#083C49;font-size:9px;padding:2px 8px;border-radius:20px;margin-top:8px;font-weight:500;">${owner}</div>
+  `;
+
+  const dot = anchor._dot;
+  const r   = dot.getBoundingClientRect();
+  const vw  = document.documentElement.clientWidth;
+  const vh  = document.documentElement.clientHeight;
+  const pw  = 270;
+
+  panel.style.display = 'block';
+  panel.style.pointerEvents = 'auto';
+  const ph = panel.offsetHeight || 200;
+
+  let left = r.left + r.width/2 - pw/2;
+  left = Math.max(8, Math.min(left, vw - pw - 8));
+
+  let top = r.bottom + 8;
+  if (top + ph > vh - 8) top = r.top - ph - 8;
+  top = Math.max(8, top);
+
+  panel.style.left = left + 'px';
+  panel.style.top  = top  + 'px';
+
+  requestAnimationFrame(() => {
+    panel.style.opacity = '1';
+    panel.style.transform = 'translateY(0) scale(1)';
+  });
+}
+
+function hidePanel() {
+  panel.style.opacity = '0';
+  panel.style.transform = 'translateY(6px) scale(.97)';
+  setTimeout(() => {
+    panel.style.display = 'none';
+    panel.style.pointerEvents = 'none';
+  }, 180);
+  activeAnchor = null;
+}
+
+function positionDot(anchor) {
+  const r = anchor.getBoundingClientRect();
+  const dot = anchor._dot;
+  dot.style.top  = (r.top  + r.height/2 - 13) + 'px';
+  dot.style.left = (r.left + r.width/2  - 13) + 'px';
+}
+
+document.querySelectorAll('[data-ann]').forEach(anchor => {
+  const num   = anchor.dataset.ann;
+  const color = anchor.dataset.color || 'a1';
+
+  const dot = document.createElement('div');
+  dot.style.cssText = `
+    position:fixed;width:26px;height:26px;border-radius:50%;
+    background:${COLORS[color]};color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-size:10px;font-weight:700;cursor:pointer;
+    box-shadow:0 2px 8px rgba(0,0,0,.3);
+    border:2px solid #fff;
+    font-family:'Lexend Exa',sans-serif;
+    pointer-events:auto;
+    transition:transform .15s,box-shadow .15s;
+    z-index:9001;
+  `;
+  dot.textContent = num;
+  overlay.appendChild(dot);
+  anchor._dot = dot;
+
+  positionDot(anchor);
+
+  dot.addEventListener('mouseenter', () => {
+    dot.style.transform = 'scale(1.2)';
+    dot.style.boxShadow = '0 4px 14px rgba(0,0,0,.35)';
+    activeAnchor = anchor;
+    showPanel(anchor, color);
+  });
+  dot.addEventListener('mouseleave', () => {
+    dot.style.transform = 'scale(1)';
+    dot.style.boxShadow = '0 2px 8px rgba(0,0,0,.3)';
+    hidePanel();
+  });
+});
+
+function addPulseRing(dot, color) {
+  const ring = document.createElement('div');
+  ring.className = 'ann-pulse-ring';
+  ring.style.cssText = `width:26px;height:26px;border:2px solid ${color};`;
+  document.body.appendChild(ring);
+  dot._ring = ring;
+}
+
+function repositionAll() {
+  document.querySelectorAll('[data-ann]').forEach(anchor => {
+    if (!anchor._dot) return;
+    const r = anchor.getBoundingClientRect();
+    const inView = r.bottom > 0 && r.top < window.innerHeight;
+    anchor._dot.style.display = inView ? 'flex' : 'none';
+    if (anchor._ring) anchor._ring.style.display = inView ? 'block' : 'none';
+    if (inView) {
+      positionDot(anchor);
+      const d = anchor._dot.getBoundingClientRect();
+      if (anchor._ring) {
+        anchor._ring.style.top  = d.top  + 'px';
+        anchor._ring.style.left = d.left + 'px';
+      }
+      if (anchor._badge) {
+        anchor._badge.style.top  = (d.bottom + 8) + 'px';
+        anchor._badge.style.left = Math.min(d.left, document.documentElement.clientWidth - 220) + 'px';
+        anchor._badge.style.display = inView ? 'flex' : 'none';
+      }
+    } else {
+      if (anchor._badge) anchor._badge.style.display = 'none';
+    }
+  });
+  rafPending = false;
+}
+
+document.querySelectorAll('[data-ann]').forEach(anchor => {
+  if (anchor._dot) {
+    addPulseRing(anchor._dot, COLORS[anchor.dataset.color] || '#083C49');
+
+    if (anchor.dataset.ann === '1') {
+      const badge = document.createElement('div');
+      badge.className = 'start-here-badge';
+      badge.textContent = 'Hier starten — Zahlen anfahren';
+      document.body.appendChild(badge);
+      anchor._badge = badge;
+    }
+  }
+});
+
+let rafPending = false;
+function scheduleReposition() {
+  if (!rafPending) {
+    rafPending = true;
+    requestAnimationFrame(repositionAll);
+  }
+}
+window.addEventListener('scroll', scheduleReposition, {passive:true});
+window.addEventListener('resize', scheduleReposition, {passive:true});
+
+window.addEventListener('load', () => {
+  repositionAll();
+  setTimeout(repositionAll, 300);
+});
+repositionAll();
+
+document.querySelectorAll('.card, .tour-card, .ceo-card, .news-hero-card').forEach(el => {
+  el.classList.add('fade-up');
+});
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 60);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+function animateCount(el, target, duration) {
+  const start = performance.now();
+  function step(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(eased * target);
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.querySelectorAll('.m365-num').forEach(el => {
+      const target = parseInt(el.textContent, 10);
+      el.textContent = '0';
+      animateCount(el, target, 1200);
+    });
+  }, 400);
+});
+
+const searchInput = document.querySelector('.search-box input');
+if (searchInput) {
+  const phrases = [
+    'Personen, Dokumente, Richtlinien, Tools, Neuigkeiten suchen…',
+    'Tipp: „Regelung flexibles Arbeiten"',
+    'Tipp: „Sarah Johnson — Produktteam"',
+    'Tipp: „IT-Helpdesk"',
+    'Tipp: „Q1-Ergebnispräsentation"',
+    'Tipp: „Urlaubsantrag"',
+  ];
+  let pi = 0;
+  function cyclePlaceholder() {
+    pi = (pi + 1) % phrases.length;
+    searchInput.setAttribute('placeholder', phrases[pi]);
+  }
+  setInterval(cyclePlaceholder, 3000);
+}
+
+function openLightbox(src, label) {
+  const lb = document.getElementById('lightbox');
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox-label').textContent = label;
+  const dl = document.getElementById('lightbox-download');
+  dl.href = src;
+  dl.download = label.replace(/[^a-z0-9]/gi, '-').toLowerCase() + '.png';
+  lb.style.display = 'flex';
+  requestAnimationFrame(() => lb.style.opacity = '1');
+}
+function closeLightbox() {
+  const lb = document.getElementById('lightbox');
+  lb.style.display = 'none';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+</html>
